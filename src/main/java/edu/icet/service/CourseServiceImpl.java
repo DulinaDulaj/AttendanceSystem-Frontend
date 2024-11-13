@@ -1,23 +1,19 @@
 package edu.icet.service;
-
 import edu.icet.dto.Course;
-import edu.icet.dto.Student;
 import edu.icet.entity.CourseEntity;
-import edu.icet.entity.StudentEntity;
 import edu.icet.repository.CourseRepository;
-import edu.icet.repository.StudentRepository;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class CourseServiceImpl implements CourseService{
 
     private final CourseRepository repository;
-    private  ModelMapper mapper;
+    private final ModelMapper mapper;
 
     @Override
     public List<Course> getAll() {
@@ -34,7 +30,7 @@ public class CourseServiceImpl implements CourseService{
     }
 
     @Override
-    public void deleteCourseById(String cName) {
-        repository.deleteById(cName);
+    public void deleteCourseById(String cCode) {
+        repository.deleteById(cCode);
     }
 }

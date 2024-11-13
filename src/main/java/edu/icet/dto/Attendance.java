@@ -13,10 +13,9 @@ import java.time.LocalDate;
 
 public class Attendance {
 
-    private LocalDate date;
-    private String stId;
-    private String stName;
-    private String courseName;
-    private String status;
+    private String nic;
+    private String name;
+    private String course;
+    private String date;
 
 }

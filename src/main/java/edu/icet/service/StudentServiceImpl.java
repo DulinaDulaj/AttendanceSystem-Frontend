@@ -9,12 +9,13 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
 public class StudentServiceImpl implements StudentService{
     private final StudentRepository repository;
-    private  ModelMapper mapper;
+    private final ModelMapper mapper;
 
     @Override
     public List<Student> getAll() {
@@ -37,5 +38,15 @@ public class StudentServiceImpl implements StudentService{
     @Override
     public void updateStudentById(Student student) {
         repository.save(mapper.map(student, StudentEntity.class));
+    }
+
+    public List<Student> findStudentsByNicContaining(String nic) {
+
+        List<StudentEntity> studentEntities = repository.findByNicContaining(nic);
+
+
+        return studentEntities.stream()
+                .map(studentEntity -> mapper.map(studentEntity, Student.class))
+                .collect(Collectors.toList());
     }
 }

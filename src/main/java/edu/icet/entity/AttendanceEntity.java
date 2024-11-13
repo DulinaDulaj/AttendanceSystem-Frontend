@@ -19,10 +19,9 @@ import java.time.LocalDate;
 
 public class AttendanceEntity {
     @Id
-    private String atId;
-    private LocalDate date;
-    private String stId;
-    private String stName;
-    private String courseName;
-    private String status;
+    private String nic;
+    private String name;
+    private String course;
+    private String date;
+
 }

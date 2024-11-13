@@ -11,8 +11,9 @@ import lombok.ToString;
 @Data
 
 public class Course {
-    private String cName;
-    private String cCode;
+
+    private String c_code;
+    private String c_name;
     private String description;
 
 }

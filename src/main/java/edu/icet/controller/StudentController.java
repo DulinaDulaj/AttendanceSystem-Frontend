@@ -44,4 +44,9 @@ public class StudentController {
         service.deleteStudentById(nic);
     }
 
+    @GetMapping("/search/{nic}")
+    public List<Student> searchStudents(@PathVariable("nic") String nic) {
+        return service.findStudentsByNicContaining(nic);
+    }
+
 }

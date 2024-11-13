@@ -9,4 +9,5 @@ public interface StudentService {
     void addStudent(Student student);
     void deleteStudentById(String name);
     void updateStudentById(Student student);
+    public List<Student> findStudentsByNicContaining(String nic);
 }
